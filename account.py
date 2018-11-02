@@ -28,3 +28,10 @@ class User:
       if user.p_number==number:
         return user
 
+  @classmethod
+  def show_profile(cls):
+    '''
+    show user profile
+    '''
+    return cls.user_info
+

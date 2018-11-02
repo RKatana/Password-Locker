@@ -15,3 +15,10 @@ class Credentials:
     save user credentials
     '''
     Credentials.user_details.append(self)
+
+  @classmethod
+  def show_profile(cls):
+    '''
+    show user credentials
+    '''
+    return cls.user_details
