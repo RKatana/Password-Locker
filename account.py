@@ -14,3 +14,7 @@ class User:
     save user info
     '''
     User.user_info.append(self)
+
+  def del_user(self):
+    '''
+    delete user info
