@@ -22,6 +22,36 @@ class TestUser(unittest.TestCase):
     user_details=[]
     user_info=[]
 
+  #test to check if user detailsare saved
+  def test_save_user(self):
+    self.new_user.save_user()
+    self.assertEqual(len(User.user_info),2)
+
+  #test to check if credentials are saved
+    self.new_credentials.save_info()
+    self.assertEqual(len(Credentials.user_details),2)
+
+  #Test to check if multiple accounts can be saved
+  def test_multi_save(self):
+    self.new_user.save_user()
+    self.new_user=User('Kk','pk','1432')
+    self.assertEqual(len(User.user_info),1)
+
+    #test for credentials
+    self.new_credentials.save_info()
+    self.new_credentials=Credentials('23','kde')
+    self.assertEqual(len(Credentials.user_details),1)
+
+  #test to check for profile and details
+  def check_profile_name(self):
+    new_user.save_user()
+    
+
+
+
+
+
+
 
 
 

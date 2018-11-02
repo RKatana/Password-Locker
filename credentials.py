@@ -26,7 +26,7 @@ class Credentials:
     Credentials.user_details.append(self)
 
   @classmethod
-  def show_profile(cls):
+  def show_details(cls):
     '''
     show user credentials
     '''
