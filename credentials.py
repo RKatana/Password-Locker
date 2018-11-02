@@ -1,6 +1,6 @@
 import pyperclip
 import random
-import User from account
+from account import User 
 class Credentials:
   '''
   class for user credentials
