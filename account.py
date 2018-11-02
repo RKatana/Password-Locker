@@ -18,3 +18,12 @@ class User:
   def del_user(self):
     '''
     delete user info
+    '''
+    User.user_info.remove(self)
+
+  @classmethod
+  def check_user(cls,number):
+    for user in cls.user_info:
+      if user.p_number==number:
+        return user
+
