@@ -16,7 +16,7 @@ class Credentials:
   def random_generator():
     '''
     random pswd generator
-    ''''
+    '''
     return random.choice(random_pswd)
 
   def save_info(self):
