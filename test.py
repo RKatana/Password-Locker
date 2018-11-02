@@ -44,8 +44,12 @@ class TestUser(unittest.TestCase):
 
   #test to check for profile and details
   def check_profile_name(self):
-    new_user.save_user()
-    
+    self.new_credentials.save_info()
+    unique_user=Credentials('kbc','5360')
+    unique_user.save_info()
+    search_user=Credentials.search_acc_name('kbc')
+    self.assertEqual(search_user.password,unique_user.password)
+
 
 
 

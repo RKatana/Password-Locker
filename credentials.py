@@ -26,6 +26,14 @@ class Credentials:
     Credentials.user_details.append(self)
 
   @classmethod
+  def search_acc_name(cls,name):
+    for name in cls.user_details:
+      if acc_name == name:
+        return name
+      
+
+
+  @classmethod
   def show_details(cls):
     '''
     show user credentials
