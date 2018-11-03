@@ -58,8 +58,8 @@ class TestUser(unittest.TestCase):
     new_acc = Credentials.acc_exist('1123')
     self.assertTrue(new_acc)
 
-  # def test_show_details(self):
-  #   self.assertEqual(Credentials.show_details(),Credentials.user_details)
+  def test_show_details(self):
+    self.assertEqual(Credentials.show_details(),Credentials.user_details)
 
 
 
