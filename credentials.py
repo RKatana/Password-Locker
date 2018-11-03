@@ -32,7 +32,14 @@ class Credentials:
         return name
       
 
+  @classmethod
+  def acc_exist(cls,name):
+    for account in cls.user_details:
+      if account.acc_name == name:
+        return True
+      return False
 
+      
   @classmethod
   def show_details(cls):
     '''

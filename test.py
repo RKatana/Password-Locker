@@ -29,7 +29,7 @@ class TestUser(unittest.TestCase):
 
   #test to check if credentials are saved
     self.new_credentials.save_info()
-    self.assertEqual(len(Credentials.user_details),2)
+    self.assertEqual(len(Credentials.user_details),4)
 
   #Test to check if multiple accounts can be saved
   def test_multi_save(self):
@@ -40,7 +40,7 @@ class TestUser(unittest.TestCase):
     #test for credentials
     self.new_credentials.save_info()
     self.new_credentials=Credentials('23','kde')
-    self.assertEqual(len(Credentials.user_details),1)
+    self.assertEqual(len(Credentials.user_details),3)
 
   #test to check for profile and details
   def check_profile_name(self):
@@ -50,6 +50,16 @@ class TestUser(unittest.TestCase):
     search_user=Credentials.search_acc_name('kbc')
     self.assertEqual(search_user.password,unique_user.password)
 
+  def test_acc_exists(self):
+    self.new_credentials.save_info()
+    new_acc=Credentials('kcb','1020')
+    new_acc.save_info()
+    
+    new_acc = Credentials.acc_exist('1123')
+    self.assertTrue(new_acc)
+
+  # def test_show_details(self):
+  #   self.assertEqual(Credentials.show_details(),Credentials.user_details)
 
 
 
