@@ -25,15 +25,18 @@ def display_details():
   return Credentials.show_details()
   return User.show_profile()
 
+def rndm_pswd():
+  return Credentials.random_generator()
+
 def user_del(user):
   user.del_user()
 
 def main():
-  print('Welcome to password locker, Please enter your username')
+  print('Welcome to password locker. Please enter your username.')
   user_name = input()
 
   print(f'Hello {user_name}')
-  print('-'*20)
+  print('-'*30)
   print('Complete the next step to register')
 
   print('Enter first name ....')
@@ -50,19 +53,30 @@ def main():
   print('\n')
 
   while True:
-    print('*'*20)
-    print('Please use these short codes: na - create new account, da - display your accounts, fa - find account, del - del an account, rp - generate random password, ex - to exit')
+    print('*'*30)
+    print('Please use these short codes: na - create new account, da - display your accounts, fa - find account, del - del an account, exit - to exit')
+
+    print('\n')
+
     print(f'User: .... {f_name} {l_name}')
+    print('\n')
+
     short_code = input().lower()
     if short_code == 'na':
       print('New Account')
-      print('*'*10)
+      print('*'*30)
 
       print('Enter account name ....')
       acc_name = input()
 
-      print('Enter your password ....')
-      password = input()
+      print('Type rp - to get a random password, or cp - for a custom password')
+      if short_code == 'rp':
+        password = rndm_pswd(random_generator())
+        return password
+
+      else:
+        print('Enter your password ....')
+        password = input()
 
       save_credentials(create_creds(acc_name,password))
       
@@ -76,7 +90,9 @@ def main():
         print(f'Accounts for {f_name} {l_name} ')
         print('\n')
         for account in display_details():
-          print(f' {account.acc_name}')
+          print(f'Account name: ..... {account.acc_name}')
+          print(f'Password: ..... {account.password} ')
+          print('\n')
 
       else:
         print('\n')
@@ -87,7 +103,7 @@ def main():
       print('Enter the name of account to search')
       account_search = input()
       if find_user(account_search):
-        print(f'{find_user.acc_name}')
+        print(f'{new_details.password}')
 
       else:
         print('Account not found')
@@ -98,7 +114,7 @@ def main():
       acc = find_user(acc_del)
       user_del(acc)
 
-    elif short_code == 'ex':
+    elif short_code == 'exit':
       
         print('Thank you, bye')
         break

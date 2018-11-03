@@ -20,13 +20,16 @@ class Credentials:
     '''
     for pswd in cls.random_pswd:
       
-      return random.choice(random_pswd.pswd)
+      return pswd.random.choice(random_pswd)
 
   def save_info(self):
     '''
     save user credentials
     '''
     Credentials.user_details.append(self)
+
+  def del_user(self):
+    Credentials.user_details.remove(self)
 
   @classmethod
   def search_acc_name(cls,name):
