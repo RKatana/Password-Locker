@@ -6,6 +6,10 @@ def create_user(fname,lname,phone):
   new_user=User(fname,lname,phone)
   return new_user
 
+def create_creds(nacc,npassword):
+  new_details = Credentials(nacc,npassword)
+  return new_details
+
 def save_user(user):
   user.save_user()
 
@@ -40,7 +44,20 @@ def main():
       print('Enter first name ....')
       f_name = input()
 
-      
+      print('Enter last name ....')
+      l_name = input()
+
+      print('Enter phone number ....')
+      p_number = input()
+
+      print('Enter account name')
+      acc_name = input()
+
+      print('Enter your password')
+      password = input()
+
+      save_user(create_user(fname,lname,phone))
+      save_credentials(create_creds(nacc,npassword))
 
 
 
