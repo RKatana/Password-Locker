@@ -24,7 +24,23 @@ def user_del(user):
   user.del_user()
 
 def main():
-  print('Welcome to password locker')
+  print('Welcome to password locker, Please enter your name')
+  user_name = input()
+
+  print(f'Hello {user_name}')
+  print('\n')
+
+  while True:
+    print('Please use this short codes: na - create new account, da - display your accounts, fa - find account, del - del an account, rp - generate random password, ex - to exit')
+
+    short_code = input().lower()
+    if short_code == 'na':
+      print('New Account')
+      print('*'*10)
+      print('Enter first name ....')
+      f_name = input()
+
+      
 
 
 
