@@ -7,17 +7,20 @@ class Credentials:
   '''
   user_details=[]
 
-  random_pswd=['acdbe4','ac5de','4ac4e','wat21','crde3']
+  random_pswd = ['acdbe4','ac5de','4ac4e','wat21','crde3']
 
   def __init__(self,acc_name,password):
     self.acc_name=acc_name
     self.password=password
 
-  def random_generator():
+  @classmethod
+  def random_generator(cls):
     '''
     random pswd generator
     '''
-    return random.choice(random_pswd)
+    for pswd in cls.random_pswd:
+      
+      return random.choice(random_pswd.pswd)
 
   def save_info(self):
     '''
@@ -39,7 +42,7 @@ class Credentials:
         return True
       return False
 
-      
+
   @classmethod
   def show_details(cls):
     '''

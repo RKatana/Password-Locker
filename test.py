@@ -61,6 +61,10 @@ class TestUser(unittest.TestCase):
   def test_show_details(self):
     self.assertEqual(Credentials.show_details(),Credentials.user_details)
 
+  # def test_random(self):
+  #   new_pswd=Credentials.random_generator(random_pswd.pswd)
+  #   self.assertEqual(new_pswd.random_generator)
+
 
 
 
