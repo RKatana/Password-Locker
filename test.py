@@ -66,12 +66,5 @@ class TestUser(unittest.TestCase):
   #   self.assertEqual(new_pswd.random_generator)
 
 
-
-
-
-
-
-
-
 if __name__=='__main__':
   unittest.main()
