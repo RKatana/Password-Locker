@@ -17,7 +17,7 @@ def save_credentials(info):
   info.save_info()
 
 def find_user(name):
-  return User.search_acc_name(name)
+  return Credentials.search_acc_name(name)
 def user_check(name):
   return User.check_user(name)
 
@@ -59,7 +59,44 @@ def main():
       save_user(create_user(fname,lname,phone))
       save_credentials(create_creds(nacc,npassword))
 
+      print('\n')
+      print(f'New {acc_name} account created '):
+      print('\n')
 
+    elif short_code == 'da':
+      if  display_details():
+        print(f'Accounts for {fname} ')
+        print('\n')
+        for account in display_details():
+          print(f' {account.acc_name} {account.fname} {account.lname}')
+
+      else print('\n')
+      print('Whoops! No account found')
+      print('\n')
+
+    elif short_code == 'fa':
+      print('Enter the name of account to search')
+      account_search = input()
+      if find_user(account_search):
+        print(f'{search_acc_name.acc_name}')
+
+      else:
+        print('Account not found')
+
+    elif short_code == 'del':
+      print('Enter account name to delete')
+      acc_del = input()
+      acc = find_user(acc_del)
+      user_del(acc)
+
+    elif short_code == 'ex':
+      
+        print('Thank you, bye')
+        break
+    
+    else:
+      print('Wrong operation. Try again')
 
 if __name__=='main':
+
   main()
