@@ -30,9 +30,9 @@ class Credentials:
 
   @classmethod
   def search_acc_name(cls,name):
-    for name in cls.user_details:
-      if acc_name == name:
-        return name
+    for account in cls.user_details:
+      if account.acc_name == name:
+        return account
       
 
   @classmethod
