@@ -70,7 +70,7 @@ After the operation you will now be able to run the application locally on your 
 
 ------------------------------------------------------------------------
 
-### Link to our app
+### Link to view the app (gh-pages)
 
 [Password-Locker](https://RKatana.github.io/Password-Locker/)
 
