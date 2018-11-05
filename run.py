@@ -1,4 +1,4 @@
-
+#!/usr/bin/env python3.6
 from account import User
 from credentials  import Credentials
 
@@ -70,9 +70,9 @@ def main():
       acc_name = input()
 
       print('Type rp - to get a random password, or cp - for a custom password')
-      if short_code == 'rp':
-        password = rndm_pswd(random_generator())
-        return password
+      short_code1=input().lower()
+      if short_code1 == 'rp':
+        password = 'hjrj48nekgh37'
 
       else:
         print('Enter your password ....')
